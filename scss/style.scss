@@ -13,6 +13,15 @@ section {
   margin: 0 auto;
 }
 
+.hidden {
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  z-index: 99999;
+}
+
 // -- 메인 영역
 .main-area {
   position: relative;
@@ -204,16 +213,19 @@ section {
   padding: 0 200px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
 
-  // 제품 정보
+  // 제품 정보 그룹
   .info-area {
     display: flex;
     align-items: center;
 
+    // 제품 설명
     .info-text-area {
       letter-spacing: -0.06em;
-      position: relative;
+      margin-right: 80px;
 
       .name {
         color: #fff;
@@ -241,11 +253,44 @@ section {
       position: absolute;
       top: -90px;
       left: 300px;
-      width: 524px;
+      width: 484px;
     }
 
     .item-bg1 {
       width: 442px;
+    }
+  }
+
+  // 제품 버튼 리스트
+  .item-button-list {
+    position: relative;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    // 버튼 (hover효과를 위해 background-image처리)
+    // 1 ~ 7번까지 반복
+    @for $i from 1 through 7 {
+      li:nth-child(#{$i}) {
+        float: left;
+        margin-right: 36px;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        background: url("/image/bath#{$i}_g.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all .4s;
+      }
+
+      // 호버시 이미지 흑백에서 컬러로 활성화
+      li:nth-child(#{$i}):hover {
+        width: 100px;
+        height: 100px;
+        background: url("/image/bath#{$i}.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   }
 }

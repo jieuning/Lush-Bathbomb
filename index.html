@@ -18,7 +18,6 @@
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script src="
   https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
-  <script src="lib/jquery.mousewheel.min.js"></script>
   <!-- script -->
   <script src="/js/script.js"></script>
 </head>
@@ -36,7 +35,7 @@
   </main>
 
   <section class="intro">
-    <!-- 텍스트 가로 루프 애니메이션 동작 부분 -->
+    <!-- 텍스트 가로 루프 애니메이션 동작 리스트(for문으로 반복) -->
     <ul class="title-box-wrap">
       <li class="title-box">
         <h4 class="intro-title">Bathbamb</h4>
@@ -71,9 +70,9 @@
   </section>
 
   <section class="item">
-    <!-- 제품 정보 영역 -->
+    <!-- 제품 정보 그룹 -->
     <div class="info-area">
-      <!-- 제품 텍스트 영역 -->
+      <!-- 제품 설명 영역 -->
       <div class="info-text-area">
         <!-- 제품명 -->
         <h4 class="name">intergalactic</h4>
@@ -85,10 +84,34 @@
       </div>
       <!-- 제품 이미지 영역 -->
       <div class="item-area">
-        <img class="item1" src="image/bathbamb1.png" alt="인터갈락틱 배쓰밤" />
-        <img class="item-bg1" src="image/bathbamb-bg1.png" alt="인터갈락틱 배쓰밤 상세" />
+        <img class="item1" src="image/bath1.png" alt="인터갈락틱 배쓰밤" />
+        <img class="item-bg1" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
       </div>
     </div>
+    <!-- 제품 버튼 리스트 1 ~ 7(li에 이미지 background처리) -->
+    <ul class="item-button-list">
+      <li>
+        <h2 class="hidden">인터갈락틱 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">크루비 카인드 오브 러브 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">브리아트사이드 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">드래곤스 에그 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">피치 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">트와일라잇 버튼</h2>
+      </li>
+      <li>
+        <h2 class="hidden">가디스 버튼</h2>
+      </li>
+    </ul>
   </section>
 </body>
 
