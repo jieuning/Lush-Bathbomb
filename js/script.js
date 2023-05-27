@@ -1,17 +1,24 @@
+$(document).ready(function () {
+  // $("body").css({ "height": 2000 + $(window).innerHeight() });
 
-const title = document.querySelectorAll('.main-title h2');
-console.log(title[0].offsetTop)
-
-// 1.lush의 opcity를 0으로 바꾼다 서서히
-//2.bath의 opcity를 1로 바꾼다.
-window.addEventListener('scroll', () => {
-  if (title[0].offsetTop > 10) {
-    title[0].style.opacity = 0;
-    title[1].style.opacity = 1;
+  // title-box요소 loop애니메이션을 위해 복사
+  for(i = 0; i < 3; i++) {
+    $(".title-box").clone().appendTo(".title-box-wrap");
   }
+
+  $("intro-title")
+  // let ScrollTop = $(window).scrollTop();
+  // let d = $(".main-title").width();
+  // console.log(d)
+
+  // $(window).on("scroll", function () {
+  //   if (ScrollTop >= 100 && ScrollTop < 3652) {
+  //     $(".main-title").css({ "top": 0, "height": $(window).innerHeight() });
+  //     $(".main-title").css({ "left": d });
+  //   }
+  // });
+
+
 });
-  // title[0].style.opacity = 0;
-  // title[1].style.opacity = 1;
-  // title[1].style.opacity = 0;
-  // title[2].style.opacity = 1;);
+
 
