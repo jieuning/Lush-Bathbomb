@@ -23,96 +23,116 @@
 </head>
 
 <body>
-  <main class="main-area">
-    <!-- 메인 동영상 -->
-    <video autoplay loop muted>
-      <source src="/image/background2.mp4" type="video/mp4" />
-    </video>
-    <div class="main-container">
-      <!-- 메인 블렌드 텍스트 -->
-      <span class="main-title">LUSH</span>
+  <div class="all-wrap">
+    <div id="horizontal-wrap">
+      <main class="main-area">
+        <!-- 메인 동영상 -->
+        <video autoplay loop muted>
+          <source src="/image/background.mp4" type="video/mp4" />
+        </video>
+        <div class="main-container">
+          <!-- 메인 블렌드 텍스트 -->
+          <span class="main-title title1">lush</span>
+          <span class="main-title title2">bathbomb</span>
+        </div>
+      </main>
     </div>
-  </main>
 
-  <section class="intro">
-    <!-- 텍스트 가로 루프 애니메이션 동작 리스트(for문으로 반복) -->
-    <ul class="title-box-wrap">
-      <li class="title-box">
-        <h4 class="intro-title">Bathbamb</h4>
-        <!-- 아웃라인 텍스트 -->
-        <h4 class="intro-title2">Bathbamb</h4>
-      </li>
-    </ul>
-    <!-- 왼쪽 이미지 -->
-    <img class="intro-img" src="image/intro_img4.png" alt="푸른색 물에 녹은 배쓰밤 이미지" />
-    <p class="sub-title">gift to you</p>
-    <!-- 오른쪽 영역 그룹 -->
-    <div class="right-area">
-      <!-- 소개글 -->
-      <div class="text-box">
-        <h4 class="sub-title2">당신에게 향기로운 입욕을 선물합니다.</h4>
-        <p class="sub">
-          러쉬는 신선한 과일과 채소, 최상의 에센셜 오일, 그리고
-          안전한 원료를 사용하여 효과적인 제품을 만듭니다.
-          욕조에 빠트려 환상적인 빛깔과 촉촉하게 감싸는
-          향기를 맡으며 오늘의 피로를 녹여보세요.
-        </p>
-      </div>
-      <!-- 겹쳐진 이미지 랩 -->
-      <div class="intro-img-wrap">
-        <img class="intro-img2" src="image/intro_img5.png" alt="배쓰밤 이미지" />
-        <img class="intro-img3" src="image/intro_img6.png" alt="주황색 물에 녹은 배쓰밤 이미지" />
-      </div>
+    <div id="colunm-wrap">
+      <section class="intro">
+        <!-- 텍스트 가로 루프 애니메이션 동작 리스트(for문으로 반복) -->
+        <ul class="title-box-wrap">
+          <li class="title-box">
+            <h4 class="intro-title">Bathbamb</h4>
+            <!-- 아웃라인 텍스트 -->
+            <h4 class="intro-title2">Bathbamb</h4>
+          </li>
+        </ul>
+        <!-- 왼쪽 이미지 -->
+        <div class="animation-wrap">
+          <!-- 애니메이션을 위한 숨김 요소 -->
+          <div class="img-hidden-box">
+            <img class="intro-img" src="image/intro_img4.png" alt="푸른색 물에 녹은 배쓰밤 이미지" />
+          </div>
+          <p class="sub-title">gift to you</p>
+          <!-- 오른쪽 영역 그룹 -->
+          <div class="right-area">
+            <!-- 소개글 -->
+            <div class="text-box">
+              <h4 class="sub-title2">당신에게 향기로운 입욕을 선물합니다.</h4>
+              <p class="sub">
+                러쉬는 신선한 과일과 채소, 최상의 에센셜 오일, 그리고
+                안전한 원료를 사용하여 효과적인 제품을 만듭니다.
+                욕조에 빠트려 환상적인 빛깔과 촉촉하게 감싸는
+                향기를 맡으며 오늘의 피로를 녹여보세요.
+              </p>
+            </div>
+            <!-- 겹쳐진 이미지 랩 -->
+            <div class="intro-img-wrap">
+              <div class="img-hidden-box2">
+                <img class="intro-img2" src="image/intro_img5.png" alt="배쓰밤 이미지" />
+              </div>
+              <img class="intro-img3" src="image/intro_img6.png" alt="주황색 물에 녹은 배쓰밤 이미지" />
+            </div>
+          </div>
+          <!-- 아래쪽 이미지 영역 -->
+          <div class="bottom-area">
+            <h4 class="center-txt">lush</h4>
+            <img class="intro-img4" src="image/intro_img8.png" alt="물에 녹고 있는 핑크색 배쓰밤" />
+          </div>
+        </div>
+      </section>
     </div>
-    <!-- 아래쪽 이미지 영역 -->
-    <h4 class="center-txt">lush</h4>
-    <img class="intro-img4" src="image/intro_img8.png" alt="물에 녹고 있는 핑크색 배쓰밤" />
-  </section>
 
-  <section class="item">
-    <!-- 제품 정보 그룹 -->
-    <div class="info-area">
-      <!-- 제품 설명 영역 -->
-      <div class="info-text-area">
-        <!-- 제품명 -->
-        <h4 class="name">intergalactic</h4>
-        <!-- 제품 설명 -->
-        <p class="item-sub">
-          빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.<br />
-          산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
-        </p>
-      </div>
-      <!-- 제품 이미지 영역 -->
-      <div class="item-area">
-        <img class="item1" src="image/bath1.png" alt="인터갈락틱 배쓰밤" />
-        <img class="item-bg1" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
-      </div>
+    <div id="bottom-wrap">
+      <section class="item" id="dd">
+        <div>
+          <!-- 제품 정보 그룹 -->
+          <div class="info-area">
+            <!-- 제품 설명 영역 -->
+            <div class="info-text-area">
+              <!-- 제품명 -->
+              <h4 class="name">intergalactic</h4>
+              <!-- 제품 설명 -->
+              <p class="item-sub">
+                빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.<br />
+                산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
+              </p>
+            </div>
+            <!-- 제품 이미지 영역 -->
+            <div class="item-area">
+              <img class="item1" src="image/bath1.png" alt="인터갈락틱 배쓰밤" />
+              <img class="item-bg1" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+            </div>
+          </div>
+          <!-- 제품 버튼 리스트 1 ~ 7(li에 이미지 background처리) -->
+          <!-- <ul class="item-button-list">
+            <li>
+              <h2 class="hidden">인터갈락틱 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">크루비 카인드 오브 러브 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">브리아트사이드 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">드래곤스 에그 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">피치 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">트와일라잇 버튼</h2>
+            </li>
+            <li>
+              <h2 class="hidden">가디스 버튼</h2>
+            </li>
+          </ul> -->
+      </section>
     </div>
-    <!-- 제품 버튼 리스트 1 ~ 7(li에 이미지 background처리) -->
-    <ul class="item-button-list">
-      <li>
-        <h2 class="hidden">인터갈락틱 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">크루비 카인드 오브 러브 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">브리아트사이드 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">드래곤스 에그 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">피치 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">트와일라잇 버튼</h2>
-      </li>
-      <li>
-        <h2 class="hidden">가디스 버튼</h2>
-      </li>
-    </ul>
-  </section>
+  </div>
+  </div>
 </body>
 
 </html>
