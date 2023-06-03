@@ -3,6 +3,8 @@
 // -- 공용 클래스
 body,
 html {
+  height: 100%;
+  width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #050505;
 }
@@ -80,7 +82,7 @@ section {
 #colunm-wrap {
   position: fixed;
   width: 100%;
-  height: 2463px;
+  height: 2363px;
 
   // -- 인트로 섹션
   .intro {
@@ -88,8 +90,7 @@ section {
     overflow: hidden;
     // position: relative;
     color: #fff;
-    border-bottom: 1px solid red;
-    height: 2463px;
+    height: 2363px;
     box-sizing: border-box;
 
     // 애니메이션 동작되는 엘리먼트
@@ -133,40 +134,49 @@ section {
       }
     }
 
-    // 애니메이션 구간
+    // 이미지, 텍스트 애니메이션 구간
     .animation-wrap {
       position: relative;
       top: 262px;
       width: 100%;
       height: 100%;
 
-      // 스케일 숨김 박스 
-      .img-hidden-box {
-        display: absolute;
-        width: 0;
-        height: 502px;
-        overflow: hidden;
-      }
-
-      // 왼쪽 영역 이미지
-      .intro-img {
+      // 이미지 스케일 크기 고정
+      .img-box {
+        position: relative;
         width: 733px;
         height: 502px;
-        opacity: 0.2;
-        transform: scale(1.1);
-        transition: all 1.5s ease-in-out;
-      }
+        overflow: hidden;
+        float: left;
 
-      .intro-img.active {
-        opacity: 1;
-        transform: scale(1);
+        // 이미지 애니메이션 효과를 위한 랩
+        .img-effect-wrap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+        }
+
+        // 왼쪽 영역 이미지
+        .intro-img {
+          width: 733px;
+          opacity: 0;
+          transform: scale(1.1);
+          transition: all 1.5s ease-in-out;
+          z-index: -1;
+        }
+
+        .intro-img.active {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
 
       // 왼쪽 이미지와 겹쳐진 텍스트
       .sub-title {
         position: absolute;
         top: 182px;
-        left: 872px;
+        left: 922px;
         font-size: 102px;
         text-transform: uppercase;
         font-weight: 800;
@@ -183,7 +193,7 @@ section {
 
         // 인트로 소개글
         .text-box {
-          padding-bottom: 368px;
+          position: relative;
           letter-spacing: -0.02em;
           word-break: keep-all;
           text-align: right;
@@ -193,6 +203,7 @@ section {
           line-height: 1.6;
           text-align: left;
           opacity: 0.1;
+          left: 50px;
 
           .sub-title2 {
             padding-bottom: 30px;
@@ -207,52 +218,109 @@ section {
           }
         }
 
-        // 오른쪽 겹쳐진 이미지
+        // 오른쪽 하단 겹쳐진 이미지
         .intro-img-wrap {
-          position: relative;
+          position: absolute;
+          top: 450px;
+          width: 100%;
+          height: 100%;
 
-          .img-hidden-box2 {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+          // 이미지 스케일시 크기 고정
+          .img-box2 {
+            position: relative;
+            width: 438px;
             height: 100%;
             overflow: hidden;
+            float: left;
+
+            .img-effect-wrap2 {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 100%;
+            }
+
             .intro-img2 {
               width: 438px;
+              object-fit: contain;
+              opacity: 0;
+              transform: scale(1.2);
+              transition: all 1s ease-in-out;
+              z-index: -1;
+            }
+
+            .intro-img2.active {
+              opacity: 1;
+              transform: scale(1);
             }
           }
 
-          .intro-img3 {
-            position: relative;
-            width: 438px;
+          // 이미지 스케일시 크기 고정
+          .img-box3 {
+            position: absolute;
+            top: 103px;
             left: 408px;
-            bottom: -1px;
+            width: 438px;
+            height: 138px;
+            overflow: hidden;
+
+            .intro-img3 {
+              width: 438px;
+              object-fit: contain;
+              transform: scale(1.2);
+              opacity: 0.2;
+              transition: all 1s ease-in-out;
+            }
+
+            .intro-img3.active {
+              transform: scale(1);
+              opacity: 1;
+            }
           }
         }
       }
     }
 
-    // 아래쪽 이미지 영역
+    // 최하단 이미지 영역
     .bottom-area {
-      position: relative;
-      top: 564px;
-      .center-txt {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 468px;
+      box-sizing: border-box;
+
+      .bottom-title {
         position: relative;
-        top: 124px;
-        left: 40%;
+        top: 100px;
+        text-align: center;
         text-transform: uppercase;
         font-size: 158px;
         font-weight: 900;
         z-index: 50;
+        opacity: 0;
+      }
+
+      .img-box4 {
+        position: relative;
+        left: 0;
+        width: 1024px;
+        height: 459px;
+        object-fit: contain;
+        overflow: hidden;
       }
 
       .intro-img4 {
-        position: relative;
         width: 1024px;
-        margin: auto; //가운데 정렬
-        display: block; //가운데 정렬
-        padding: 102px 0;
+        opacity: 0;
+        transform: scale(1.2);
+        transition: all 1s ease-in-out;
+        z-index: -1;
+      }
+
+      .intro-img4.active {
+        transform: scale(1);
+        opacity: 1;
       }
     }
   }
@@ -261,77 +329,108 @@ section {
 #bottom-wrap {
   position: fixed;
   width: 100%;
-  background-color: #C1F4FF;
+  height: 100%;
 
   // -- 제품 섹션
   .item {
-    position: relative;
-    bottom: 0;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 50;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    transition: all .4s ease-in;
 
-    // 제품 정보 그룹
-    .info-area {
-      width: 1200px;
-      height: 100%;
-      box-sizing: border-box;
-      margin: 0 auto;
+    #page-container {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
 
-      // 제품 설명
-      .info-text-area {
-        position: relative;
-        top: 20%;
-        width: 50%;
-        letter-spacing: -0.06em;
-        float: left;
+      .item-page {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         z-index: 50;
 
-        .name {
-          // position: absolute;
-          color: #fff;
-          font-size: 86px;
-          font-weight: 600;
-          text-transform: uppercase;
-          float: left;
+        // 제품
+        .item-wrap {
+          position: absolute;
+          width: 1200px;
+          height: 100%;
+          margin: 0 auto;
+
+          // 제품 설명
+          .info-text-area {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            float: left;
+            z-index: 50;
+            left: -100px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+
+            .name {
+              white-space: nowrap;
+              color: #fff;
+              font-size: 86px;
+              font-weight: 600;
+              text-transform: uppercase;
+              float: left;
+            }
+
+            .ingredient {
+              font-size: 22px;
+              color: #fff;
+              font-weight: 500;
+              float: left;
+              margin-top: 20px;
+            }
+
+            .item-sub {
+              margin-top: 20px;
+              word-break: keep-all;
+              line-height: 1.5;
+              color: #fff;
+              font-weight: 500;
+              font-size: 20px;
+              float: left;
+            }
+          }
+
+          // 제품 이미지
+          .item-area {
+            position: relative;
+            top: 35%;
+            left: 50%;
+            width: 50%;
+
+            .item1 {
+              position: absolute;
+              top: -90px;
+              left: 600px;
+              opacity: 0;
+              transition: all 1s ease-in-out;
+              width: 484px;
+              float: left;
+              z-index: 50;
+            }
+
+            .item-bg1 {
+              position: absolute;
+              left: 200px;
+              opacity: 0;
+              transition: all 1s ease-in-out;
+              width: 442px;
+              float: left;
+            }
+          }
         }
-
-        .item-sub {
-          // position: absolute;
-          margin-top: 20px;
-          word-break: keep-all;
-          line-height: 1.5;
-          color: #2b2b2b;
-          font-size: 18px;
-          float: left;
-        }
-      }
-    }
-
-    // 제품 이미지
-    .item-area {
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      width: 50%;
-
-      .item1 {
-        position: absolute;
-        top: -90px;
-        left: 200px;
-        width: 484px;
-        float: left;
-        z-index: 50;
-      }
-
-      .item-bg1 {
-        position: absolute;
-        width: 442px;
-        float: left;
       }
     }
 

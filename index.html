@@ -13,13 +13,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="
-  https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
-  <!-- script -->
-  <script src="/js/script.js"></script>
 </head>
 
 <body>
@@ -50,9 +43,12 @@
         </ul>
         <!-- 왼쪽 이미지 -->
         <div class="animation-wrap">
-          <!-- 애니메이션을 위한 숨김 요소 -->
-          <div class="img-hidden-box">
-            <img class="intro-img" src="image/intro_img4.png" alt="푸른색 물에 녹은 배쓰밤 이미지" />
+          <!-- 이미지 크기 고정 박스 -->
+          <div class="img-box">
+            <!-- 애니메이션 효과 랩 -->
+            <div class="img-effect-wrap">
+              <img class="intro-img" src="image/intro_img4.png" alt="푸른색 물에 녹은 배쓰밤 이미지" />
+            </div>
           </div>
           <p class="sub-title">gift to you</p>
           <!-- 오른쪽 영역 그룹 -->
@@ -67,18 +63,24 @@
                 향기를 맡으며 오늘의 피로를 녹여보세요.
               </p>
             </div>
-            <!-- 겹쳐진 이미지 랩 -->
+            <!-- 하단 겹쳐진 이미지 랩 -->
             <div class="intro-img-wrap">
-              <div class="img-hidden-box2">
-                <img class="intro-img2" src="image/intro_img5.png" alt="배쓰밤 이미지" />
+              <div class="img-box2">
+                <div class="img-effect-wrap2">
+                  <img class="intro-img2" src="image/intro_img5.png" alt="배쓰밤 이미지" />
+                </div>
               </div>
-              <img class="intro-img3" src="image/intro_img6.png" alt="주황색 물에 녹은 배쓰밤 이미지" />
+              <div class="img-box3">
+                <img class="intro-img3" src="image/intro_img6.png" alt="주황색 물에 녹은 배쓰밤 이미지" />
+              </div>
             </div>
           </div>
-          <!-- 아래쪽 이미지 영역 -->
+          <!-- 최하단 이미지 영역 -->
           <div class="bottom-area">
-            <h4 class="center-txt">lush</h4>
-            <img class="intro-img4" src="image/intro_img8.png" alt="물에 녹고 있는 핑크색 배쓰밤" />
+            <h4 class="bottom-title">lush</h4>
+            <div class="img-box4">
+              <img class="intro-img4" src="image/intro_img8.png" alt="물에 녹고 있는 핑크색 배쓰밤" />
+            </div>
           </div>
         </div>
       </section>
@@ -86,53 +88,176 @@
 
     <div id="bottom-wrap">
       <section class="item" id="dd">
-        <div>
-          <!-- 제품 정보 그룹 -->
-          <div class="info-area">
-            <!-- 제품 설명 영역 -->
-            <div class="info-text-area">
-              <!-- 제품명 -->
-              <h4 class="name">intergalactic</h4>
-              <!-- 제품 설명 -->
-              <p class="item-sub">
-                빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.<br />
-                산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
-              </p>
-            </div>
-            <!-- 제품 이미지 영역 -->
-            <div class="item-area">
-              <img class="item1" src="image/bath1.png" alt="인터갈락틱 배쓰밤" />
-              <img class="item-bg1" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+        <!-- 슬라이드의 기준이 되는 컨테이너 -->
+        <div id="page-container">
+          <!-- 제픔 1 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">intergalactic</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#베티버 뿌리 #자몽 #페퍼민트</p>
+                <p class="item-sub">
+                  빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.
+                  산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath1.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
             </div>
           </div>
-          <!-- 제품 버튼 리스트 1 ~ 7(li에 이미지 background처리) -->
-          <!-- <ul class="item-button-list">
-            <li>
-              <h2 class="hidden">인터갈락틱 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">크루비 카인드 오브 러브 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">브리아트사이드 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">드래곤스 에그 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">피치 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">트와일라잇 버튼</h2>
-            </li>
-            <li>
-              <h2 class="hidden">가디스 버튼</h2>
-            </li>
-          </ul> -->
+          <!-- 제픔 2 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">groovy kind<br/> of love</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#로즈우드 #베르가못 #일랑일랑 오일</p>
+                <p class="item-sub">
+                  신선한 베르가못과 사랑스러운 일랑일랑 오일이 넘치는 사랑과 평화의 에너지를 선사해줍니다.
+                  이 배쓰 밤은 자연과 평화, 그리고 노래를 사랑하는 자유로운 히피에서 영감을 받아 탄생했습니다.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath2.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg2.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+          <!-- 제픔 3 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">brightside</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#만다린 오일 #베르가못 오일 #치자꽃</p>
+                <p class="item-sub">
+                  갓 짜낸 과일을 가득 담은 것처럼 새콤달콤해요. 햇볕의 따스함을 가득 머금은 오렌지 주스를
+                  욕조 가득 채워보세요. 생동감 넘치는 재즈의 선율처럼 밝은 에너지가 넘치죠.
+                  기분까지도 에너제틱하게 만들어 줍니다.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath3.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg3.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+          <!-- 제픔 4 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">dragon's egg</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#베르가못 #자스민 #레몬</p>
+                <p class="item-sub">
+                  베르가못과 레몬향이 달콤하게 어우러져 톡톡 터지는 달콤한 캔디와 환상적인 색채는 마치 
+                  전설의 세계를 탐험하는 것 같은 기분을 선하합니다. 
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath4.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg4.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+          <!-- 제픔 5 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">peachpeach</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#다바나 꽃 #자몽</p>
+                <p class="item-sub">
+                  다바나꽃, 자몽 향이 달콤한 복숭아의 향기와 어우러져 욕실 가득 퍼집니다. 핑크빛으로
+                  물든 욕조 안에서 사랑스러운 기분을 느껴보세요.
+                  상큼 달콤한 향기가 함께하는 핑크빛 로맨스가 필요하다면, 적극 추천합니다.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath5.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg5.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+          <!-- 제픔 6 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">twilight</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#통카 #라벤터 #일랑일랑 오일</p>
+                <p class="item-sub">
+                  라벤더와 통카는 편안한 휴식에 도움을 주는 향기를 가지고 있습니다. 
+                  꿈결 같은 라벤터와 편안한 퉁카로 가득 찬 저녁 하늘을 상상해 보세요.
+                  포근함이 필요한 날, 트와일라잇을 욕조에 퐁당.
+                  분홍빛과 푸른빛이 만나 환상적인 보라 물결이 완성됩니다.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath6.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg6.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+          <!-- 제픔 7 -->
+          <div class="item-page">
+            <div class="item-wrap">
+              <!-- 제품 설명 영역 -->
+              <div class="info-text-area">
+                <!-- 제품명 -->
+                <h4 class="name">goddess</h4>
+                <!-- 제품 설명 -->
+                <p class="ingredient">#오스만투스 #쉐어 버터 #자스민 #다마스크 장미</p>
+                <p class="item-sub">
+                  매혹적인 샌달 우드, 자스민 그리고 관능적인 장미의 향연.
+                  코코아 버터와 쉐어 버터의 부드러움이 넘실대는 은빛 물결에 몸을 맡기세요.
+                  감각의 축제가 시작됩니다. 신비로운 우주의 보랏빛 행성을 떠올려 보세요.
+                </p>
+              </div>
+              <!-- 제품 이미지 영역 -->
+              <div class="item-area">
+                <img class="item1" src="image/bath7.png" alt="인터갈락틱 배쓰밤" />
+                <img class="item-bg1" src="image/bath_bg7.png" alt="인터갈락틱 물에 녹였을 때 이미지" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
     </div>
   </div>
-  </div>
+
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+  <!-- <script src="/lib/jquery.mousewheel.min.js"></script> -->
+  <!-- script -->
+  <script src="/js/scrollAni.js"></script>
+  <script src="/js/scrollSlide.js"></script>
+  <!-- <script src="/js/fullpage.js"></script> -->
 </body>
 
 </html>
