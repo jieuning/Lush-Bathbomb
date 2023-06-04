@@ -31,19 +31,42 @@ $(document).ready(function () {
     array[i] = $(".item-page").eq(i).offset().left;
   }
 
+  console.log(array)
+
+  let array2 = [];
+  for (let i = 0; i < itemPage; i++) {
+    array2[i] = $(".item-page").eq(i).offset().top;
+  }
+
+  console.log(array2)
+
+
+
   // 배경 색상 배열
   let colors = ["#A2D9D9", "#EFE3BA", "#EDD1B7", "#EBDDCD", "#EED2C9", "#D1BDDB", "#BABEE5"]
 
   // 마우스 휠, 스크롤 이벤트
   $(".item-page").on("scroll mousewheel DOMMouseScroll", function (e) {
     let ScrollTop = $(document).scrollTop();
-    console.log(ScrollTop);
 
     let ScrollLeft = $(document).scrollLeft();
-    console.log(ScrollLeft);
+
+    let ddd1 = $(".item-page").eq(0).offset().left
+    console.log(ddd1);
+    let ddd2 = $(".item-page").eq(1).offset().left
+    console.log(ddd2);
+    let ddd3 = $(".item-page").eq(2).offset().left
+    console.log(ddd3);
+    let ddd4 = $(".item-page").eq(3).offset().left
+    console.log(ddd4);
+    let ddd5 = $(".item-page").eq(4).offset().left
+    console.log(ddd5);
+    let ddd6 = $(".item-page").eq(5).offset().left
+    console.log(ddd6);
+    let ddd7 = $(".item-page").eq(6).offset().left
+    console.log(ddd7);
 
     let w_delta = e.originalEvent.wheelDelta;
-    console.log(w_delta);
 
     // 휠 아래로
     if (w_delta < 0 && $(this).next().length > 0) {
@@ -51,6 +74,20 @@ $(document).ready(function () {
         e.preventDefault(); // 기본 동작 막기
         $("#page-container").stop().animate({ "left": -array[$(this).index() + 1] }, 1000);
         $(".item").css({ "background": colors[$(this).index() + 1] });
+
+        for (let i = 0; i < itemPage; i++) {
+          if ($(".item").css({ "background": colors[$(this).index() + 1] }) === true) {
+            $(".info-text-area").eq(i).css({ "left": 0, "opacity": 1 });
+            $(".item1").eq(i).css({ "left": "200px", "opacity": 1 });
+            $(".item-bg1").eq(i).css({ "left": "-20px", "opacity": 1 });
+          } 
+          else {
+            $(".info-text-area").eq(i).css({ "left": "-100px", "opacity": 0 });
+            $(".item1").eq(i).css({ "left": "600px", "opacity": 0 });
+            $(".item-bg1").eq(i).css({ "left": "200px", "opacity": 0 });
+
+          }
+        }
       }
     }
 
@@ -59,8 +96,15 @@ $(document).ready(function () {
       e.preventDefault();
       $("#page-container").stop().animate({ "left": -array[$(this).index() - 1] }, 1000);
       $(".item").css({ "background": colors[$(this).index() - 1] });
-    }
 
+      // for (let i = 0; i < itemPage; i++) {
+      //   if ($(".item-page").eq(i).offset().left <= 0 && $(".item-page").eq(i).offset().left >= -1920) {
+      //       $(".info-text-area").eq(i).css({ "left": "-100px", "opacity": 0 });
+      //       $(".item1").eq(i).css({ "left": "600px", "opacity": 0 });
+      //       $(".item-bg1").eq(i).css({ "left": "200px", "opacity": 0 });
+      //   } 
+      // }
+    }
   });
 
   //브라우저를 resize했을시 박스의 크기 재조정

@@ -117,15 +117,14 @@ $(document).ready(function () {
     // item section 배경 컬러 애니메이션
     if (ScrollTop >= $("#bottom-wrap").offset().top) {
       $(".item").css({ "background": "#A2D9D9" });
-      $(".info-text-area").css({"left": 0, "opacity": 1});
-      $(".item1").css({"left": "200px", "opacity": 1});
-      $(".item-bg1").css({"left": "-20px", "opacity": 1});
+      $(".info-text-area").eq(0).css({"left": 0, "opacity": 1});
+      $(".item1").eq(0).css({"left": "200px", "opacity": 1});
+      $(".item-bg1").eq(0).css({"left": "-20px", "opacity": 1});
     } else {
       $(".item").css({ "background": "#050505" });
-      $(".info-text-area").css({"left": "-100px", "opacity": 0});
-      $(".item1").css({"left": "600px", "opacity": 0});
-      $(".item-bg1").css({"left": "200px", "opacity": 0});
-
+      $(".info-text-area").eq(0).css({"left": "-100px", "opacity": 0});
+      $(".item1").eq(0).css({"left": "600px", "opacity": 0});
+      $(".item-bg1").eq(0).css({"left": "200px", "opacity": 0});
     }
 
     if (ScrollTop >= Height && ScrollTop <= bottom) {

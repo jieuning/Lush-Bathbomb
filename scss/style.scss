@@ -362,73 +362,81 @@ section {
           width: 1200px;
           height: 100%;
           margin: 0 auto;
+        }
 
-          // 제품 설명
-          .info-text-area {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
+        // 제품 설명
+        .info-text-area {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50%;
+          float: left;
+          z-index: 50;
+          left: -100px;
+          opacity: 0;
+          transition: all 1s ease-in-out;
+
+          .name {
+            white-space: nowrap;
+            color: #fff;
+            font-size: 86px;
+            font-weight: 600;
+            text-transform: uppercase;
             float: left;
-            z-index: 50;
-            left: -100px;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-
-            .name {
-              white-space: nowrap;
-              color: #fff;
-              font-size: 86px;
-              font-weight: 600;
-              text-transform: uppercase;
-              float: left;
-            }
-
-            .ingredient {
-              font-size: 22px;
-              color: #fff;
-              font-weight: 500;
-              float: left;
-              margin-top: 20px;
-            }
-
-            .item-sub {
-              margin-top: 20px;
-              word-break: keep-all;
-              line-height: 1.5;
-              color: #fff;
-              font-weight: 500;
-              font-size: 20px;
-              float: left;
-            }
           }
 
-          // 제품 이미지
-          .item-area {
-            position: relative;
-            top: 35%;
-            left: 50%;
-            width: 50%;
+          .ingredient {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 500;
+            float: left;
+            margin-top: 20px;
+          }
 
-            .item1 {
-              position: absolute;
-              top: -90px;
-              left: 600px;
-              opacity: 0;
-              transition: all 1s ease-in-out;
-              width: 484px;
-              float: left;
-              z-index: 50;
-            }
+          .item-sub {
+            margin-top: 20px;
+            word-break: keep-all;
+            line-height: 1.5;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+            float: left;
+          }
+        }
 
-            .item-bg1 {
-              position: absolute;
-              left: 200px;
-              opacity: 0;
-              transition: all 1s ease-in-out;
-              width: 442px;
-              float: left;
-            }
+        // @for $i from 1 through 7 {
+        //   .txtani#{$i} {
+        //     left: -100px;
+        //     opacity: 0;
+        //     transition: all 1s ease-in-out;
+        //   }
+        // }
+
+        // 제품 이미지
+        .item-area {
+          position: relative;
+          top: 35%;
+          left: 50%;
+          width: 50%;
+
+          .item1 {
+            position: absolute;
+            top: -90px;
+            left: 600px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            width: 484px;
+            float: left;
+            z-index: 50;
+          }
+
+          .item-bg1 {
+            position: absolute;
+            left: 200px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            width: 442px;
+            float: left;
           }
         }
       }
