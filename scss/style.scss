@@ -329,7 +329,7 @@ section {
 #bottom-wrap {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   // -- 제품 섹션
   .item {
@@ -404,14 +404,6 @@ section {
           }
         }
 
-        // @for $i from 1 through 7 {
-        //   .txtani#{$i} {
-        //     left: -100px;
-        //     opacity: 0;
-        //     transition: all 1s ease-in-out;
-        //   }
-        // }
-
         // 제품 이미지
         .item-area {
           position: relative;
@@ -441,39 +433,34 @@ section {
         }
       }
     }
+  }
+}
 
-    // 제품 버튼 리스트
-    .item-button-list {
-      // position: relative;
-      margin: 0 auto;
-      // top: 20%;
-      // left: 50%;
-      // transform: translateX(-50%);
+#footer-wrap {
+  position: fixed;
+  width: 100%;
+  height: 200px;
 
-      // 버튼 (마우스 오버 효과를 위해 background-image처리)
-      // 1 ~ 7번까지 반복
-      @for $i from 1 through 7 {
-        li:nth-child(#{$i}) {
-          float: left;
-          margin-right: 36px;
-          cursor: pointer;
-          width: 100px;
-          height: 100px;
-          background: url("/image/bath#{$i}_g.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-          transition: all .4s;
-        }
+  footer {
+    padding: 80px;
+    width: 100%;
+    height: 100%;
 
-        // 마우스 오버시 버튼 흑백에서 컬러로 활성화
-        li:nth-child(#{$i}):hover {
-          width: 100px;
-          height: 100px;
-          background: url("/image/bath#{$i}.png");
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-      }
+    img {
+      width: 120px;
+      object-fit: contain;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    p {
+      color: #fff;
+      line-height: 1.8;
+    }
+
+    .copy {
+      text-transform: uppercase;
+      margin-top: 20px;
     }
   }
 }

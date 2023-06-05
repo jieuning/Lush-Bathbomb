@@ -49,45 +49,18 @@ $(document).ready(function () {
   $(".item-page").on("scroll mousewheel DOMMouseScroll", function (e) {
     let ScrollTop = $(document).scrollTop();
 
-    let ScrollLeft = $(document).scrollLeft();
+    let ScrollLeft = $(document).scrollLeft() + innerWidth;
+    console.log(ScrollLeft);
 
-    let ddd1 = $(".item-page").eq(0).offset().left
-    console.log(ddd1);
-    let ddd2 = $(".item-page").eq(1).offset().left
-    console.log(ddd2);
-    let ddd3 = $(".item-page").eq(2).offset().left
-    console.log(ddd3);
-    let ddd4 = $(".item-page").eq(3).offset().left
-    console.log(ddd4);
-    let ddd5 = $(".item-page").eq(4).offset().left
-    console.log(ddd5);
-    let ddd6 = $(".item-page").eq(5).offset().left
-    console.log(ddd6);
-    let ddd7 = $(".item-page").eq(6).offset().left
-    console.log(ddd7);
 
     let w_delta = e.originalEvent.wheelDelta;
 
     // 휠 아래로
-    if (w_delta < 0 && $(this).next().length > 0) {
+    if (w_delta < 0 && $(this).next().length < 7) {
       if (ScrollTop >= $("#bottom-wrap").offset().top) {
         e.preventDefault(); // 기본 동작 막기
         $("#page-container").stop().animate({ "left": -array[$(this).index() + 1] }, 1000);
         $(".item").css({ "background": colors[$(this).index() + 1] });
-
-        for (let i = 0; i < itemPage; i++) {
-          if ($(".item").css({ "background": colors[$(this).index() + 1] }) === true) {
-            $(".info-text-area").eq(i).css({ "left": 0, "opacity": 1 });
-            $(".item1").eq(i).css({ "left": "200px", "opacity": 1 });
-            $(".item-bg1").eq(i).css({ "left": "-20px", "opacity": 1 });
-          } 
-          else {
-            $(".info-text-area").eq(i).css({ "left": "-100px", "opacity": 0 });
-            $(".item1").eq(i).css({ "left": "600px", "opacity": 0 });
-            $(".item-bg1").eq(i).css({ "left": "200px", "opacity": 0 });
-
-          }
-        }
       }
     }
 
@@ -96,14 +69,6 @@ $(document).ready(function () {
       e.preventDefault();
       $("#page-container").stop().animate({ "left": -array[$(this).index() - 1] }, 1000);
       $(".item").css({ "background": colors[$(this).index() - 1] });
-
-      // for (let i = 0; i < itemPage; i++) {
-      //   if ($(".item-page").eq(i).offset().left <= 0 && $(".item-page").eq(i).offset().left >= -1920) {
-      //       $(".info-text-area").eq(i).css({ "left": "-100px", "opacity": 0 });
-      //       $(".item1").eq(i).css({ "left": "600px", "opacity": 0 });
-      //       $(".item-bg1").eq(i).css({ "left": "200px", "opacity": 0 });
-      //   } 
-      // }
     }
   });
 
@@ -115,5 +80,4 @@ $(document).ready(function () {
 
     scrollPageSlide();
   });
-
 });

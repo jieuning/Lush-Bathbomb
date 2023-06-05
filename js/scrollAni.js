@@ -10,6 +10,7 @@ $(document).ready(function () {
 
   // #horizontal-wrap 스크롤 총 높이값
   let horizontal = $("#horizontal-wrap").prop('scrollHeight');
+  console.log(horizontal)
 
   // #colunm-wrap 스크롤 총 높이값
   let colunm = $("#colunm-wrap").prop('scrollHeight');
@@ -18,6 +19,10 @@ $(document).ready(function () {
   // #bottom-wrap 스크롤 총 높이값
   let bottom = $("#bottom-wrap").prop('scrollHeight');
   console.log(bottom)
+
+  // #footer-wrap 스크롤 총 높이값
+  let footer = $("#footer-wrap").prop('scrollHeight');
+  console.log(footer)
 
   // #item-page의 개수
   let itemPage = $(".item-page").length;
@@ -35,12 +40,16 @@ $(document).ready(function () {
   let Height = horizontal + colunm;
   console.log(Height)
 
+  // horizontal colunm의 스크롤 높이 합
+  let Height2 = horizontal + colunm + bottom;
+  console.log(Height2)
+
   // 전체 총 스크롤 높이값
-  let totalHeight = horizontal + colunm + bottom;
+  let totalHeight = horizontal + colunm + bottom + footer;
   console.log(totalHeight)
 
   // 총 스크롤 높이값을 바디의 높이값으로 지정
-  $("body").css({ "height": totalHeight + $(window).innerHeight() });
+  $("body").css({ "height": Height2 + $(window).innerHeight() });
 
 
   // ---------- 요소에 top값 지정 ----------
@@ -50,6 +59,8 @@ $(document).ready(function () {
 
   // top값 지정
   $("#bottom-wrap").css({ "top": Height });
+
+  $("#footer-wrap").css({ "top": Height2 });
 
 
   // ---------- 스크롤 함수 ----------
@@ -81,6 +92,7 @@ $(document).ready(function () {
       $("#horizontal-wrap").css({ "top": 0 - (ScrollTop - horizontal) });
       $("#colunm-wrap").css({ "top": $(window).innerHeight() - (ScrollTop - horizontal) });
       $("#bottom-wrap").css({ "top": $(window).innerHeight() - (ScrollTop - (horizontal + colunm)) });
+      $("#footer-wrap").css({ "top": $(window).innerHeight() - (ScrollTop - (horizontal + colunm + bottom)) });
     }
 
     // intro section 상단 이미지, 텍스트 애니메이션
@@ -107,6 +119,7 @@ $(document).ready(function () {
     }
 
     // intro section 최하단 이미지 애니메이션
+
     if (ScrollTop >= $("#colunm-wrap").offset().top + 1186) {
       // 이미지 애니메이션
       $(".intro-img4").addClass("active");
@@ -116,21 +129,28 @@ $(document).ready(function () {
 
     // item section 배경 컬러 애니메이션
     if (ScrollTop >= $("#bottom-wrap").offset().top) {
+
+      if (ScrollTop >= Height && ScrollTop <= Height2) {
+        $("#bottom-wrap").css({ "top": 0, "height": $(window).innerHeight() });
+      }
+
       $(".item").css({ "background": "#A2D9D9" });
-      $(".info-text-area").eq(0).css({"left": 0, "opacity": 1});
-      $(".item1").eq(0).css({"left": "200px", "opacity": 1});
-      $(".item-bg1").eq(0).css({"left": "-20px", "opacity": 1});
+      $(".info-text-area").css({ "left": 0, "opacity": 1 });
+      $(".item1").css({ "left": "200px", "opacity": 1 });
+      $(".item-bg1").css({ "left": "-20px", "opacity": 1 });
     } else {
       $(".item").css({ "background": "#050505" });
-      $(".info-text-area").eq(0).css({"left": "-100px", "opacity": 0});
-      $(".item1").eq(0).css({"left": "600px", "opacity": 0});
-      $(".item-bg1").eq(0).css({"left": "200px", "opacity": 0});
+      $(".info-text-area").css({ "left": "-100px", "opacity": 0 });
+      $(".item1").css({ "left": "600px", "opacity": 0 });
+      $(".item-bg1").css({ "left": "200px", "opacity": 0 });
     }
 
-    if (ScrollTop >= Height && ScrollTop <= bottom) {
-      $("#bottom-wrap").css({ "top": 0, "height": $(window).innerHeight() });
+    if (ScrollTop >= Height2) {
+      $("body").css({ "height": totalHeight + $(window).innerHeight() }); // 총 스크롤 높이값 재설정
+      $("#footer-wrap").css({ "top": $(window).innerHeight() });
+    } else {
+      $("body").css({ "height": Height2 + $(window).innerHeight() });
     }
-
   };
 
 
