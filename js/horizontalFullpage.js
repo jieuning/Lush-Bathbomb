@@ -47,13 +47,14 @@ $(document).ready(function () {
     if (w_delta < 0 && $(this).next().length > 0) {
       if (ScrollTop >= $("#horizontal-wrap").offset().top) {
         e.preventDefault(); // 기본 동작 막기
-        $("#page-container").stop().animate({ "left": -array[$(this).index() + 1] }, 1000); // 페이지 이동
+        $("#page-container").stop().animate({ "left": -array[$(this).index() + 1] }, 1000, "swing"); // 페이지 이동
         $(".item").css({ "background": colors[$(this).index() + 1] }); // 배경 색상 변경
       }
 
       // 가로 풀페이지 도입시 푸터로 스크롤 되는 것 방지
       // 마지막 페이지로 이동 될때 푸터 높이 추가
       if (ScrollLeft <= -9000) {
+        
         // 총 스크롤 높이값 재설정(footer추가)
         $("body").css({ "height": totalHeight + $(window).innerHeight() }); 
       }
@@ -64,7 +65,7 @@ $(document).ready(function () {
     else if (w_delta > 0 && $(this).prev().length > 0) {
       if (ScrollTop <= $("#horizontal-wrap").offset().top) {
         e.preventDefault();
-        $("#page-container").stop().animate({ "left": -array[$(this).index() - 1] }, 1000);
+        $("#page-container").stop().animate({ "left": -array[$(this).index() - 1] }, 1000, "swing");
         $(".item").css({ "background": colors[$(this).index() - 1] });
       }
     }
