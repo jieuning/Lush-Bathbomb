@@ -25,11 +25,15 @@ section {
   z-index: 99999;
 }
 
+// -- 공용 클래스 끝
+
 .all-wrap {
   position: absolute;
   top: 0;
   left: 0;
 }
+
+// ---- 세로 스크롤
 
 #main-wrap {
   position: fixed;
@@ -40,6 +44,8 @@ section {
 
   // -- 메인 영역
   .main-area {
+
+    //메인 비디오
     video {
       position: absolute;
       top: 0;
@@ -72,6 +78,7 @@ section {
       opacity: 1;
     }
 
+    // bathbomb텍스트
     .title2 {
       opacity: 0;
       mix-blend-mode: screen;
@@ -89,7 +96,6 @@ section {
   .intro {
     position: relative;
     overflow: hidden;
-    // position: relative;
     color: #fff;
     height: 2363px;
     box-sizing: border-box;
@@ -143,7 +149,7 @@ section {
       width: 100%;
       height: 100%;
 
-      // 이미지 스케일 크기 고정
+      // 이미지 스케일시 크기 고정
       .img-box {
         position: relative;
         width: 733px;
@@ -159,7 +165,7 @@ section {
           width: 0;
         }
 
-        // 왼쪽 영역 이미지
+        // 왼쪽 큰 이미지
         .intro-img {
           width: 733px;
           opacity: 0;
@@ -174,7 +180,7 @@ section {
         }
       }
 
-      // 왼쪽 이미지와 겹쳐진 텍스트
+      // 왼쪽 이미지와 겹쳐진 타이틀
       .sub-title {
         position: absolute;
         top: 182px;
@@ -186,7 +192,6 @@ section {
         opacity: 0.1;
       }
 
-      // 오른쪽 영역
       .right-area {
         position: absolute;
         top: 364px;
@@ -220,7 +225,7 @@ section {
           }
         }
 
-        // 오른쪽 하단 겹쳐진 이미지
+        // 중간 겹쳐진 이미지
         .intro-img-wrap {
           position: absolute;
           top: 450px;
@@ -284,7 +289,7 @@ section {
       }
     }
 
-    // 최하단 이미지 영역
+    // 하단 이미지 영역
     .bottom-area {
       position: absolute;
       left: 50%;
@@ -292,7 +297,7 @@ section {
       bottom: 468px;
       box-sizing: border-box;
 
-      .bottom-title {
+      .bottom-img-title {
         position: relative;
         top: 100px;
         text-align: center;
@@ -328,12 +333,14 @@ section {
   }
 }
 
+// ---- 가로 풀페이지 스크롤 
+
 #horizontal-wrap {
   position: fixed;
   width: 100%;
   height: 100vh;
 
-  // -- 제품 섹션
+  // -- 제품 섹션(배경 색상 변경)
   .item {
     position: absolute;
     width: 100%;
@@ -341,6 +348,7 @@ section {
     background: #050505;
     transition: all .4s ease-in;
 
+    // 페이지 이동 기준
     #page-container {
       position: relative;
       top: 0;
@@ -348,6 +356,7 @@ section {
       width: 100%;
       height: 100vh;
 
+      // 제품 1 ~ 7까지 공유
       .item-page {
         position: absolute;
         width: 100%;
@@ -358,7 +367,6 @@ section {
         justify-content: center;
         z-index: 50;
 
-        // 제품
         .item-wrap {
           position: absolute;
           width: 1200px;
@@ -366,7 +374,7 @@ section {
           margin: 0 auto;
         }
 
-        // 제품 설명
+        // 제품 설명 텍스트
         .info-text-area {
           position: relative;
           top: 50%;
@@ -413,7 +421,7 @@ section {
           left: 50%;
           width: 50%;
 
-          .item1 {
+          .item-img {
             position: absolute;
             top: -90px;
             left: 600px;
@@ -424,7 +432,7 @@ section {
             z-index: 50;
           }
 
-          .item-bg1 {
+          .item-bg {
             position: absolute;
             left: 200px;
             opacity: 0;
@@ -438,16 +446,20 @@ section {
   }
 }
 
+// ---- 세로 스크롤
+
 #bottom-wrap {
   position: fixed;
   width: 100%;
   height: 200px;
 
+  // -- 푸터
   footer {
     padding: 80px;
     width: 100%;
     height: 100%;
 
+    // 푸터 러쉬 로고
     img {
       width: 120px;
       object-fit: contain;
@@ -455,14 +467,80 @@ section {
       display: block;
     }
 
+    // 주소, 사업자등록번호, 신고번호
     p {
       color: #fff;
       line-height: 1.8;
     }
 
-    .copy {
+    .copyright {
       text-transform: uppercase;
       margin-top: 20px;
     }
+  }
+}
+
+#modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  opacity: 0;
+
+  .modal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    padding: 60px 50px;
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 100;
+    background: url(../image/modal_bg4.jpg) no-repeat;
+    background-size: cover;
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .modal-content {
+      margin-top: 50px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .modal-content span {
+      position: relative;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .modal-content span::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 110%;
+      background: #303030;
+      z-index: -1;
+    }
+
+    .close{
+      cursor: pointer;
+      padding: 6px 20px;
+      background:#050505;
+      color: white;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      margin-top: 50px;
+      font-weight: 600;
+      border: none;
+  }
   }
 }

@@ -25,7 +25,7 @@ $(document).ready(function () {
 
   // 배경 색상 배열
   let colors = [
-    "#A2D9D9", 
+    "#A3E5E5", 
     "#EFE3BA", 
     "#EDD1B7", 
     "#EBDDCD", 
@@ -34,7 +34,7 @@ $(document).ready(function () {
     "#BABEE5"]
 
 
-  // ---------- 마우스 휠, 스크롤 이벤트 ----------
+  // ---------- 가로 페이지 마우스 휠, 스크롤 이벤트 ----------
 
   $(".item-page").on("scroll mousewheel DOMMouseScroll", function (e) {
 
@@ -42,7 +42,8 @@ $(document).ready(function () {
     let ScrollLeft = $("#page-container").offset().left;
     let w_delta = e.originalEvent.wheelDelta;
 
-    // 휠 아래로
+    // ---- 휠 아래로 ----
+
     if (w_delta < 0 && $(this).next().length > 0) {
       if (ScrollTop >= $("#horizontal-wrap").offset().top) {
         e.preventDefault(); // 기본 동작 막기
@@ -50,13 +51,16 @@ $(document).ready(function () {
         $(".item").css({ "background": colors[$(this).index() + 1] }); // 배경 색상 변경
       }
 
+      // 가로 풀페이지 도입시 푸터로 스크롤 되는 것 방지
+      // 마지막 페이지로 이동 될때 푸터 높이 추가
       if (ScrollLeft <= -9000) {
         // 총 스크롤 높이값 재설정(footer추가)
         $("body").css({ "height": totalHeight + $(window).innerHeight() }); 
       }
     }
 
-    // 휠 위로
+    // ---- 휠 위로 ----
+    
     else if (w_delta > 0 && $(this).prev().length > 0) {
       if (ScrollTop <= $("#horizontal-wrap").offset().top) {
         e.preventDefault();

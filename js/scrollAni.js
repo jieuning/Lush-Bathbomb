@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  // .title-box요소 loop애니메이션을 위해 복사
+  // loop애니메이션을 위해 복사
   for (i = 0; i < 3; i++) {
     $(".title-box").clone().appendTo(".title-box-wrap");
   }
@@ -32,11 +32,10 @@ $(document).ready(function () {
     // ---------- 세로 스크롤 ---------- 
 
     if (ScrollTop < main) {
-
       // 스크롤업시 최상단에 고정
       $("#main-wrap").css({ "top": 0 });
 
-      // 스크롤업시 #main-wrap 하단에 고정
+      // #main-wrap 하단에 고정
       $("#top-wrap").css({ "top": main });
 
       // 메인 블렌딩 텍스트 애니메이션
@@ -56,9 +55,7 @@ $(document).ready(function () {
 
     // intro section 상단 이미지, 텍스트 애니메이션
     if (ScrollTop >= $("#top-wrap").offset().top - 80) {
-
-      // 이미지 투명도, 스케일 값 
-      $(".intro-img").addClass("active");
+      $(".intro-img").addClass("active"); // 이미지 투명도, 스케일 값
 
       // 이미지 애니메이션(선 실행)
       $(".img-effect-wrap").animate({ "width": "100%" }, 800, "easeInCubic", () => {
@@ -71,7 +68,6 @@ $(document).ready(function () {
     // intro section 겹친 중간 이미지 애니메이션
     if (ScrollTop >= $("#top-wrap").offset().top + 354) {
       $(".intro-img2").addClass("active");
-      // 이미지 애니메이션
       $(".img-effect-wrap2").animate({ "width": "100%" }, 500, "easeInCubic", () => {
         $(".intro-img3").addClass("active");
       });
@@ -80,14 +76,13 @@ $(document).ready(function () {
     // intro section 최하단 이미지 애니메이션
     if (ScrollTop >= $("#top-wrap").offset().top + 1186) {
       $(".intro-img4").addClass("active"); // 이미지 애니메이션
-      $(".bottom-title").animate({ "top": 22, "opacity": 1 }, 1500, "easeOutCubic"); // 텍스트 애니메이션
+      $(".bottom-img-title").animate({ "top": 22, "opacity": 1 }, 1500, "easeOutCubic"); // 텍스트 애니메이션
     }
 
 
     // ---------- 가로 휠 스크롤 도입 설정 ---------- 
 
     if (ScrollTop >= $("#horizontal-wrap").offset().top) {
-
       if (ScrollTop >= Height && ScrollTop <= Height2) {
         // 스크롤 탑에 붙을 수 있게 조정
         $("#horizontal-wrap").css({ "top": 0, "height": $(window).innerHeight() });
@@ -96,17 +91,19 @@ $(document).ready(function () {
       // 도입 애니메이션 스크롤 다운
       $(".item").css({ "background": "#A2D9D9" }); // 배경 색상
       $(".info-text-area").css({ "left": 0, "opacity": 1 }); // 텍스트
+
       // 이미지
-      $(".item1").css({ "left": "200px", "opacity": 1 });
-      $(".item-bg1").css({ "left": "-20px", "opacity": 1 });
+      $(".item-img").css({ "left": "200px", "opacity": 1 });
+      $(".item-bg").css({ "left": "-20px", "opacity": 1 });
     }
     
     else {
+      
       // 도입 애니메이션 스크롤 업
       $(".item").css({ "background": "#050505" });
       $(".info-text-area").css({ "left": "-100px", "opacity": 0 });
-      $(".item1").css({ "left": "600px", "opacity": 0 });
-      $(".item-bg1").css({ "left": "200px", "opacity": 0 });
+      $(".item-img").css({ "left": "600px", "opacity": 0 });
+      $(".item-bg").css({ "left": "200px", "opacity": 0 });
     }
 
 
@@ -114,12 +111,16 @@ $(document).ready(function () {
 
     if (ScrollTop >= Height2) {
       // 푸터 탑값
-      $("#bottom-wrap").css({ "top": $(window).innerHeight() - (ScrollTop - (Height2)) });
+      $("#bottom-wrap").css({ "top": $(window).innerHeight() - (ScrollTop - Height2) });
     } 
     
     else {
       // 이전 높이값으로
       $("body").css({ "height": Height2 + $(window).innerHeight() }); 
+    }
+
+    if (ScrollTop >= Height2 + 20) {
+      $(".item").css({ "background": "#050505" });
     }
 
   };
