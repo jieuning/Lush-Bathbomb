@@ -25,7 +25,7 @@ $(document).ready(function () {
 
   // 배경 색상 배열
   let colors = [
-    "#A3E5E5", 
+    "#A2D9D9", 
     "#EFE3BA", 
     "#EDD1B7", 
     "#EBDDCD", 
