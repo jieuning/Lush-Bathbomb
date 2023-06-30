@@ -1,6 +1,11 @@
 @charset 'utf-8';
 
-// -- 공용 클래스
+// ----- 공용 클래스 -----
+
+*{
+  box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;
@@ -17,15 +22,10 @@ section {
 }
 
 .hidden {
-  width: 1px;
-  height: 1px;
-  font-size: 0px;
-  line-height: 0px;
-  position: absolute;
-  z-index: 99999;
+  text-indent: -9999em;
 }
 
-// -- 공용 클래스 끝
+// ----- 전체 랩 -----
 
 .all-wrap {
   position: absolute;
@@ -33,16 +33,15 @@ section {
   left: 0;
 }
 
-// ---- 세로 스크롤
+// ----- 메인 영역 -----
 
-#main-wrap {
+#top-wrap {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 5500px;
 
-  // -- 메인 영역
   .main-area {
 
     //메인 비디오
@@ -87,18 +86,18 @@ section {
   }
 }
 
-#top-wrap {
+// ----- 인트로 영역 -----
+
+#mid-wrap {
   position: fixed;
   width: 100%;
   height: 2363px;
 
-  // -- 인트로 섹션
-  .intro {
+  .intro-area {
     position: relative;
     overflow: hidden;
     color: #fff;
     height: 2363px;
-    box-sizing: border-box;
 
     // 애니메이션 동작되는 엘리먼트
     .title-box-wrap {
@@ -205,11 +204,11 @@ section {
       .sub-title {
         position: absolute;
         top: 182px;
-        left: 922px;
-        font-size: 102px;
+        left: 930px;
+        font-size: 92px;
         text-transform: uppercase;
         font-weight: 800;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.04em;
         opacity: 0.1;
       }
 
@@ -242,6 +241,7 @@ section {
 
           .sub {
             font-size: 24px;
+            font-weight: 300;
             width: 543px;
           }
         }
@@ -316,14 +316,12 @@ section {
       left: 50%;
       transform: translateX(-50%);
       bottom: 468px;
-      box-sizing: border-box;
 
       .bottom-img-title {
         position: relative;
-        top: 100px;
         text-align: center;
         text-transform: uppercase;
-        font-size: 158px;
+        font-size: 84px;
         font-weight: 900;
         z-index: 50;
         opacity: 0;
@@ -354,37 +352,47 @@ section {
   }
 }
 
-// ---- 가로 풀페이지 스크롤 
+// ----- 슬라이드 -----
 
-#horizontal-wrap {
+#bottom-wrap {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
-  // -- 제품 섹션(배경 색상 변경)
-  .item {
+  // 슬라이드 배경
+  .slide-bg {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #050505;
     transition: all .4s ease-in;
 
-    // 페이지 이동 기준
-    #page-container {
+    // 슬라이드 컨테이너
+    #slide-container {
       position: relative;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
 
-      // 제품 1 ~ 7까지 공유
-      .item-page {
+      .slide-wrap {
         position: absolute;
         width: 100%;
         height: 100vh;
+      }
+
+      // 슬라이드 1 ~ 7까지 공유
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: -webkit-box;
         display: flex;
+        -webkit-box-align: center;
         align-items: center;
+        -webkit-box-orient: vertical;
         flex-direction: column;
+        -webkit-box-pack: center;
         justify-content: center;
         z-index: 50;
 
@@ -450,7 +458,7 @@ section {
             transition: all 1s ease-in-out;
             width: 484px;
             float: left;
-            z-index: 50;
+            z-index: 10;
           }
 
           .item-bg {
@@ -463,43 +471,237 @@ section {
           }
         }
       }
+
+      // 슬라이드 네비게이션
+      .slide-navi a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+        text-indent: -9999em;
+        transition: all .4s;
+        width: 52px;
+        height: 52px;
+      }
+
+      .slide-navi a.disabled {
+        display: none;
+      }
+
+      // 이전, 다음 버튼
+      .prev {
+        background: url(../image/prev_btn.png) no-repeat;
+        background-size: contain;
+        margin-left: -752px;
+      }
+
+      .prev:hover {
+        background: url(../image/prev_btn_hover.png) no-repeat;
+        background-size: contain;
+      }
+
+      .next {
+        background: url(../image/next_btn.png) no-repeat;
+        background-size: contain;
+        margin-left: 680px;
+      }
+
+      .next:hover {
+        background: url(../image/next_btn_hover.png) no-repeat;
+        background-size: contain;
+      }
+
+      // 슬라이드 페이저
+      .pager {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        display: -webkit-box;
+        display: flex;
+
+        a {
+          margin-left: 20px;
+          display: block;
+          transition: all .4s;
+          text-indent: -9999em;
+        }
+
+        a img {
+          width: 92px;
+        }
+
+        // 기본 버튼
+        .pager1 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath1_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager2 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath2_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager3 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath3_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager4 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath4_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager5 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath5_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager6 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath6_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager7 {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath7_g.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        // 현재 선택된 버튼
+        .pager1.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath1.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager2.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath2.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager3.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath3.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager4.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath4.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager5.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath5.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager6.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath6.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager7.on {
+          width: 92px;
+          height: 92px;
+          background: url(../image/bath7.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        // 호버 버튼
+        .pager1:hover {
+          width: 92px;
+          background: url(../image/bath1.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager2:hover {
+          width: 92px;
+          background: url(../image/bath2.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager3:hover {
+          width: 92px;
+          background: url(../image/bath3.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager4:hover {
+          width: 92px;
+          background: url(../image/bath4.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager5:hover {
+          width: 92px;
+          background: url(../image/bath5.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager6:hover {
+          width: 92px;
+          background: url(../image/bath6.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+
+        .pager7:hover {
+          width: 92px;
+          background: url(../image/bath7.png) no-repeat;
+          background-size: contain;
+          z-index: 99;
+        }
+      }
     }
   }
 }
 
-// ---- 세로 스크롤
-
-#bottom-wrap {
-  position: fixed;
-  width: 100%;
-  height: 200px;
-
-  // -- 푸터
-  footer {
-    padding: 80px;
-    width: 100%;
-    height: 100%;
-
-    // 푸터 러쉬 로고
-    img {
-      width: 120px;
-      object-fit: contain;
-      margin-bottom: 40px;
-      display: block;
-    }
-
-    // 주소, 사업자등록번호, 신고번호
-    p {
-      color: #fff;
-      line-height: 1.8;
-    }
-
-    .copyright {
-      text-transform: uppercase;
-      margin-top: 20px;
-    }
-  }
-}
+// ----- 모달 -----
 
 #modal-bg {
   position: fixed;
@@ -518,7 +720,6 @@ section {
     transform: translate(-50%, -50%);
     width: 360px;
     padding: 60px 50px;
-    box-sizing: border-box;
     background: #fff;
     z-index: 100;
     background: url(../image/modal_bg.jpg) no-repeat;
@@ -526,7 +727,7 @@ section {
 
     .modal-title {
       font-size: 22px;
-      font-weight: 700;
+      font-weight: 600;
       text-align: center;
     }
 
@@ -539,9 +740,9 @@ section {
     .modal-content span {
       position: relative;
       color: #fff;
-      font-weight: 300;
     }
 
+    // 텍스트 강조 배경 라인
     .modal-content span::before {
       content: '';
       position: absolute;
@@ -551,10 +752,11 @@ section {
       z-index: -1;
     }
 
-    .close{
+    // 닫기 버튼
+    .close {
       cursor: pointer;
       padding: 6px 20px;
-      background:#050505;
+      background: #050505;
       color: white;
       text-align: center;
       display: block;
@@ -562,6 +764,6 @@ section {
       margin-top: 50px;
       font-weight: 600;
       border: none;
-  }
+    }
   }
 }

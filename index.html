@@ -6,23 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LUSH BATHBOMB</title>
+
   <!-- favicon -->
   <link rel="icon" href="image/favicon.png">
   <!-- css -->
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+  <!-- script -->
+  <script src="js/scrollAni.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/modal.js"></script>
 </head>
 
 <body>
+
+  <!----- 전체 랩 ----->
+
   <div class="all-wrap">
 
-    <!----- 세로 스크롤 ----->
+    <!----- 메인 ----->
 
-    <div id="main-wrap">
+    <div id="top-wrap">
       <main class="main-area">
         <h2 class="hidden">메인 페이지</h2>
 
@@ -39,11 +51,13 @@
       </main>
     </div>
 
-    <div id="top-wrap">
-      <section class="intro">
+    <!----- 인트로 ----->
+
+    <div id="mid-wrap">
+      <section class="intro-area">
         <h2 class="hidden">브랜드 제품 소개 페이지</h2>
 
-        <!-- 텍스트 가로 루프 애니메이션 동작 리스트(for문으로 반복) -->
+        <!-- 텍스트 루프 애니메이션 리스트 -->
         <ul class="title-box-wrap">
           <li class="title-box">
             <h4 class="intro-title">Bathbamb</h4>
@@ -63,19 +77,19 @@
               <img class="intro-img" src="image/intro_img4.png" alt="푸른색 물에 녹은 배쓰밤 이미지">
             </div>
           </div>
-          <p class="sub-title">gift to you</p>
+          <p class="sub-title">about product</p>
 
           <!-- 오른쪽 영역 그룹 -->
           <div class="right-area">
-            
+
             <!-- 소개글 -->
             <div class="text-box">
               <h4 class="sub-title2">당신에게 향기로운 입욕을 선물합니다.</h4>
               <p class="sub">
                 러쉬는 신선한 과일과 채소, 최상의 에센셜 오일, 그리고
                 안전한 원료를 사용하여 효과적인 제품을 만듭니다.
-                욕조에 빠트려 환상적인 빛깔과 촉촉하게 감싸는
-                향기를 맡으며 오늘의 피로를 녹여보세요.
+                바스밤을 욕조에 빠뜨리면 환상적인 빛깔과 함께 촉촉하게 감싸는
+                향기가 하루의 피로를 녹여주며 편안한 휴식을 선사해줍니다.
               </p>
             </div>
 
@@ -94,7 +108,7 @@
 
           <!-- 하단 이미지 영역 -->
           <div class="bottom-area">
-            <h4 class="bottom-img-title">lush</h4>
+            <h4 class="bottom-img-title">러쉬의 바스밤을 소개합니다.</h4>
             <div class="img-box4">
               <img class="intro-img4" src="image/intro_img8.png" alt="물에 녹고 있는 핑크색 배쓰밤">
             </div>
@@ -103,216 +117,229 @@
       </section>
     </div>
 
-    <!----- 가로 풀페이지 스크롤 ----->
+    <!----- 슬라이드 ----->
 
-    <div id="horizontal-wrap">
+    <div id="bottom-wrap">
 
-      <!-- 배경 색상이 변경되는 섹션 -->
-      <section class="item">
+      <!-- 배경 영역 -->
+      <section class="slide-bg">
         <h2 class="hidden">제품 소개 페이지 슬라이드</h2>
 
-        <!-- 페이지 이동 기준이 되는 컨테이너 -->
-        <div id="page-container">
+        <!-- 슬라이드 컨테이너 -->
+        <div id="slide-container">
+          <!-- 슬라이드 랩 -->
+          <div class="slide-wrap">
 
-          <!-- 제픔 1 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">intergalactic</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#베티버 뿌리 #자몽 #페퍼민트</p>
-                <p class="item-sub">
-                  빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.
-                  산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
-                </p>
+            <!-- 슬라이드 1 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">intergalactic</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#베티버 뿌리 #자몽 #페퍼민트</p>
+                  <p class="item-sub">
+                    빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을 느껴보세요.
+                    산뜻한 기분을 선사하는 페퍼민트와 샐달 우드는 환상적인 입욕 시간을 선사해 줍니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath1.png" alt="인터갈락틱 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹인 후 이미지">
+                </div>
               </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath1.png" alt="인터갈락틱 배쓰밤">
-                <img class="item-bg" src="image/bath_bg1.png" alt="인터갈락틱 물에 녹인 후 이미지">
+            </div>
+
+            <!-- 슬라이드 2 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">groovy kind<br> of love</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#로즈우드 #베르가못 #일랑일랑 오일</p>
+                  <p class="item-sub">
+                    신선한 베르가못과 사랑스러운 일랑일랑 오일이 넘치는 사랑과 평화의 에너지를 선사해줍니다.
+                    이 배쓰 밤은 자연과 평화, 그리고 노래를 사랑하는 자유로운 히피에서 영감을 받아 탄생했습니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath2.png" alt="그루비 카인드 오브 러브 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg2.png" alt="그루비 카인드 오브 러브 물에 녹인 후 이미지">
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 3 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">brightside</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#만다린 오일 #베르가못 오일 #치자꽃</p>
+                  <p class="item-sub">
+                    갓 짜낸 과일을 가득 담은 것처럼 새콤달콤해요. 햇볕의 따스함을 가득 머금은 오렌지 주스를
+                    욕조 가득 채워보세요. 생동감 넘치는 재즈의 선율처럼 밝은 에너지가 넘치죠.
+                    기분까지도 에너제틱하게 만들어 줍니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath3.png" alt="브라이트사이드 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg3.png" alt="브라이트사이드 물에 녹였을 때 이미지">
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 4 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">dragon's egg</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#베르가못 #자스민 #레몬</p>
+                  <p class="item-sub">
+                    베르가못과 레몬향이 달콤하게 어우러져 톡톡 터지는 달콤한 캔디와 환상적인 색채는 마치
+                    전설의 세계를 탐험하는 것 같은 기분을 선하합니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath4.png" alt="드래곤 에그 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg4.png" alt="드래곤 에그 물에 녹였을 때 이미지">
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 5 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">peachpeach</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#다바나 꽃 #자몽</p>
+                  <p class="item-sub">
+                    다바나꽃, 자몽 향이 달콤한 복숭아의 향기와 어우러져 욕실 가득 퍼집니다. 핑크빛으로
+                    물든 욕조 안에서 사랑스러운 기분을 느껴보세요.
+                    상큼 달콤한 향기가 함께하는 핑크빛 로맨스가 필요하다면, 적극 추천합니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath5.png" alt="피치피치 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg5.png" alt="피치피치 물에 녹였을 때 이미지">
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 6 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">twilight</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#통카 #라벤터 #일랑일랑 오일</p>
+                  <p class="item-sub">
+                    라벤더와 통카는 편안한 휴식에 도움을 주는 향기를 가지고 있습니다.
+                    꿈결 같은 라벤터와 편안한 퉁카로 가득 찬 저녁 하늘을 상상해 보세요.
+                    포근함이 필요한 날, 트와일라잇을 욕조에 퐁당.
+                    분홍빛과 푸른빛이 만나 환상적인 보라 물결이 완성됩니다.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath6.png" alt="트와일라잇 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg6.png" alt="트와일라잇 물에 녹였을 때 이미지">
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 7 -->
+            <div class="slide">
+              <div class="item-wrap">
+                <!-- 제품 설명 영역 -->
+                <div class="info-text-area">
+                  <!-- 제품명 -->
+                  <h4 class="name">goddess</h4>
+                  <!-- 제품 설명 -->
+                  <p class="ingredient">#오스만투스 #쉐어 버터 #자스민 #다마스크 장미</p>
+                  <p class="item-sub">
+                    매혹적인 샌달 우드, 자스민 그리고 관능적인 장미의 향연.
+                    코코아 버터와 쉐어 버터의 부드러움이 넘실대는 은빛 물결에 몸을 맡기세요.
+                    감각의 축제가 시작됩니다. 신비로운 우주의 보랏빛 행성을 떠올려 보세요.
+                  </p>
+                </div>
+                <!-- 제품 이미지 영역 -->
+                <div class="item-area">
+                  <img class="item-img" src="image/bath7.png" alt="가디스 배쓰밤">
+                  <img class="item-bg" src="image/bath_bg7.png" alt="가디스 물에 녹였을 때 이미지">
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- 제픔 2 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">groovy kind<br> of love</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#로즈우드 #베르가못 #일랑일랑 오일</p>
-                <p class="item-sub">
-                  신선한 베르가못과 사랑스러운 일랑일랑 오일이 넘치는 사랑과 평화의 에너지를 선사해줍니다.
-                  이 배쓰 밤은 자연과 평화, 그리고 노래를 사랑하는 자유로운 히피에서 영감을 받아 탄생했습니다.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath2.png" alt="그루비 카인드 오브 러브 배쓰밤">
-                <img class="item-bg" src="image/bath_bg2.png" alt="그루비 카인드 오브 러브 물에 녹인 후 이미지">
-              </div>
-            </div>
+          <!-- 슬라이드 네비게이션 -->
+          <div class="slide-navi">
+            <a href="#" class="prev">이전 버튼</a>
+            <a href="#" class="next">다음 버튼</a>
           </div>
 
-          <!-- 제픔 3 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">brightside</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#만다린 오일 #베르가못 오일 #치자꽃</p>
-                <p class="item-sub">
-                  갓 짜낸 과일을 가득 담은 것처럼 새콤달콤해요. 햇볕의 따스함을 가득 머금은 오렌지 주스를
-                  욕조 가득 채워보세요. 생동감 넘치는 재즈의 선율처럼 밝은 에너지가 넘치죠.
-                  기분까지도 에너제틱하게 만들어 줍니다.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath3.png" alt="브라이트사이드 배쓰밤">
-                <img class="item-bg" src="image/bath_bg3.png" alt="브라이트사이드 물에 녹였을 때 이미지">
-              </div>
-            </div>
-          </div>
-
-          <!-- 제픔 4 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">dragon's egg</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#베르가못 #자스민 #레몬</p>
-                <p class="item-sub">
-                  베르가못과 레몬향이 달콤하게 어우러져 톡톡 터지는 달콤한 캔디와 환상적인 색채는 마치
-                  전설의 세계를 탐험하는 것 같은 기분을 선하합니다.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath4.png" alt="드래곤 에그 배쓰밤">
-                <img class="item-bg" src="image/bath_bg4.png" alt="드래곤 에그 물에 녹였을 때 이미지">
-              </div>
-            </div>
-          </div>
-
-          <!-- 제픔 5 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">peachpeach</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#다바나 꽃 #자몽</p>
-                <p class="item-sub">
-                  다바나꽃, 자몽 향이 달콤한 복숭아의 향기와 어우러져 욕실 가득 퍼집니다. 핑크빛으로
-                  물든 욕조 안에서 사랑스러운 기분을 느껴보세요.
-                  상큼 달콤한 향기가 함께하는 핑크빛 로맨스가 필요하다면, 적극 추천합니다.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath5.png" alt="피치피치 배쓰밤">
-                <img class="item-bg" src="image/bath_bg5.png" alt="피치피치 물에 녹였을 때 이미지">
-              </div>
-            </div>
-          </div>
-
-          <!-- 제픔 6 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">twilight</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#통카 #라벤터 #일랑일랑 오일</p>
-                <p class="item-sub">
-                  라벤더와 통카는 편안한 휴식에 도움을 주는 향기를 가지고 있습니다.
-                  꿈결 같은 라벤터와 편안한 퉁카로 가득 찬 저녁 하늘을 상상해 보세요.
-                  포근함이 필요한 날, 트와일라잇을 욕조에 퐁당.
-                  분홍빛과 푸른빛이 만나 환상적인 보라 물결이 완성됩니다.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath6.png" alt="트와일라잇 배쓰밤">
-                <img class="item-bg" src="image/bath_bg6.png" alt="트와일라잇 물에 녹였을 때 이미지">
-              </div>
-            </div>
-          </div>
-
-          <!-- 제픔 7 -->
-          <div class="item-page">
-            <div class="item-wrap">
-              <!-- 제품 설명 영역 -->
-              <div class="info-text-area">
-                <!-- 제품명 -->
-                <h4 class="name">goddess</h4>
-                <!-- 제품 설명 -->
-                <p class="ingredient">#오스만투스 #쉐어 버터 #자스민 #다마스크 장미</p>
-                <p class="item-sub">
-                  매혹적인 샌달 우드, 자스민 그리고 관능적인 장미의 향연.
-                  코코아 버터와 쉐어 버터의 부드러움이 넘실대는 은빛 물결에 몸을 맡기세요.
-                  감각의 축제가 시작됩니다. 신비로운 우주의 보랏빛 행성을 떠올려 보세요.
-                </p>
-              </div>
-              <!-- 제품 이미지 영역 -->
-              <div class="item-area">
-                <img class="item-img" src="image/bath7.png" alt="가디스 배쓰밤">
-                <img class="item-bg" src="image/bath_bg7.png" alt="가디스 물에 녹였을 때 이미지">
-              </div>
-            </div>
+          <!-- 슬라이드 페이저 -->
+          <div class="pager">
+            <a class="pager1 on" href="#">
+              인터갈락틱 바스밤 버튼
+            </a>
+            <a class="pager2" href="#">
+              그루비 카인드 오브 러브 바스밤 버튼
+            </a>
+            <a class="pager3" href="#">
+              브라이트사이드 바스밤 버튼
+            </a>
+            <a class="pager4" href="#">
+              드래곤에그 바스밤 버튼
+            </a>
+            <a class="pager5" href="#">
+              피치피치 바스밤 버튼
+            </a>
+            <a class="pager6" href="#">
+              트와일라잇 바스밤 버튼
+            </a>
+            <a class="pager7" href="#">
+              가디스 바스밤 버튼
+            </a>
           </div>
         </div>
       </section>
     </div>
 
-    <!----- 세로 스크롤 ----->
-
-    <div id="bottom-wrap">
-      <footer>
-        <img src="image/logo.png" alt="러쉬 로고">
-        <p>서울 강남구 학동로 336(메이트리 빌딩(metree B/D))1층 주식회사 러쉬코리아</p>
-        <p>사업자 등록번호: 201-81-77964 사업자정보확인</p>
-        <p>통신판매업 신고번호: 2012-서울서초-0647</p>
-        <p class="copyright">copyright © lushkorea.co.ltd.all rights reserved.</p>
-      </footer>
-    </div>
-
-    <!-- 해상도 알림 모달 -->
+    <!----- 해상도 알림 모달 ----->
+    
     <div id="modal-bg">
       <div class="modal">
         <div class="modal-title">해상도 지원 안내창</div>
         <div class="modal-content">
-          해당 사이트는 <span>1920 해상도</span>에 <br>최적화되어 있습니다.
-          <br>추후 지속적으로 개선하여 해상도별로 <br>지원 가능하도록 하겠습니다.
+          해당 사이트는 포트폴리오 용으로 제작되었으며,
+          <span>1920 해상도</span>에 <br>최적화되어 있습니다.
+          <br>추후 지속적으로 개선하여 해상도 별로 <br>지원 가능하도록 하겠습니다.
           <br>방문해 주셔서 감사합니다.
         </div>
         <button class="close">닫기</button>
       </div>
     </div>
 
-  </div> <!-- all-wrap 끝 -->
-
-
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
-    </script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
-  <!-- script -->
-  <script src="js/scrollAni.js"></script>
-  <script src="js/horizontalFullpage.js"></script>
-  <script src="js/modal.js"></script>
+  </div>
 </body>
 
 </html>
