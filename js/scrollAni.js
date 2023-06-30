@@ -79,9 +79,9 @@ $(document).ready(function () {
 
     if (ScrollTop >= $("#mid-wrap").offset().top + 1186) {
       // 이미지
-      $(".intro-img4").addClass("active"); 
+      $(".intro-img4").addClass("active");
       // 텍스트
-      $(".bottom-img-title").animate({ "top": -20, "opacity": 1 }, 1500, "easeOutCubic"); 
+      $(".bottom-img-title").animate({ "top": -20, "opacity": 1 }, 1500, "easeOutCubic");
     }
 
 
@@ -103,6 +103,15 @@ $(document).ready(function () {
       $(".item-img").css({ "left": "600px", "opacity": 0 });
       $(".item-bg").css({ "left": "200px", "opacity": 0 });
     }
+
+    let pager = $(".pager a").length;
+    console.log(pager)
+
+    for (let i = 0; i < pager; i++) {
+      if (ScrollTop >= $(".slide-bg").offset().top) {
+        $(".pager a").eq(i).delay(i * 100).animate({ "opacity": 1 }, 500, "easeOutCirc");
+      }
+    };
   };
 
   // 이벤트 실행
