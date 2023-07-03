@@ -7,17 +7,21 @@ $(document).ready(function () {
 
   // 요소의 높이값
   let main = $("#top-wrap").prop('scrollHeight'),
-    intro = $("#mid-wrap").prop('scrollHeight'),
-    slide = $("#bottom-wrap").prop('scrollHeight');
+      intro = $("#mid-wrap").prop('scrollHeight'),
+      slide = $("#bottom-wrap").prop('scrollHeight');
 
   // 스크롤 높이 합
   let Height = main + intro,
-    totalHeight = main + intro + slide;
+      totalHeight = main + intro + slide;
+
+  // 페이저 개수
+  let pager = $(".pager a").length;
 
   // 총 스크롤 높이값을 바디의 높이값으로 지정
   $("body").css({ "height": totalHeight + $(window).innerHeight() });
 
-  // 메인을 제외한 요소의 top값 지정(높이 값 지정)
+  // 스크롤 전 요소의 top값 지정
+  $("#top-wrap").css({ "top": 0 });
   $("#mid-wrap").css({ "top": main });
   $("#bottom-wrap").css({ "top": Height });
 
@@ -26,7 +30,7 @@ $(document).ready(function () {
 
   let scrollAni = () => {
 
-    let ScrollTop = $(document).scrollTop();
+    let ScrollTop = $(window).scrollTop();
 
     // ----- 메인 스크롤, 애니메이션 ----- 
 
@@ -103,9 +107,6 @@ $(document).ready(function () {
       $(".item-img").css({ "left": "600px", "opacity": 0 });
       $(".item-bg").css({ "left": "200px", "opacity": 0 });
     }
-
-    let pager = $(".pager a").length;
-    console.log(pager)
 
     for (let i = 0; i < pager; i++) {
       if (ScrollTop >= $(".slide-bg").offset().top) {

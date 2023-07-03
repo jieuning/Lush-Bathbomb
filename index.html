@@ -13,21 +13,22 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- font -->
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
   <!-- script -->
   <script src="js/scrollAni.js"></script>
   <script src="js/slider.js"></script>
+  <script src="js/scrollToTop.js"></script>
   <script src="js/modal.js"></script>
 </head>
 
 <body>
-
   <!----- 전체 랩 ----->
 
   <div class="all-wrap">
@@ -35,7 +36,8 @@
     <!----- 메인 ----->
 
     <div id="top-wrap">
-      <main class="main-area">
+
+      <section class="main-area">
         <h2 class="hidden">메인 페이지</h2>
 
         <!-- 메인 동영상 -->
@@ -48,7 +50,7 @@
           <span class="main-title title1">lush</span>
           <span class="main-title title2">bathbomb</span>
         </div>
-      </main>
+      </section>
     </div>
 
     <!----- 인트로 ----->
@@ -324,21 +326,27 @@
       </section>
     </div>
 
-    <!----- 해상도 알림 모달 ----->
-    
-    <div id="modal-bg">
-      <div class="modal">
-        <div class="modal-title">해상도 지원 안내창</div>
-        <div class="modal-content">
-          해당 사이트는 포트폴리오 용으로 제작되었으며,
-          <span>1920 해상도</span>에 <br>최적화되어 있습니다.
-          <br>추후 지속적으로 개선하여 해상도 별로 <br>지원 가능하도록 하겠습니다.
-          <br>방문해 주셔서 감사합니다.
-        </div>
-        <button class="close">닫기</button>
-      </div>
-    </div>
+    <!----- 탑 버튼 ----->
 
+    <nav id="top-btn">
+      <h2 class="hidden">탑 버튼</h2>
+      <span>TOP</span>
+    </nav>
+  </div>
+
+  <!----- 해상도 알림 모달 ----->
+
+  <div id="modal-bg">
+    <div class="modal">
+      <div class="modal-title">해상도 지원 안내창</div>
+      <div class="modal-content">
+        해당 사이트는 포트폴리오 용으로 제작되었으며,
+        <span>1920 해상도</span>에 <br>최적화되어 있습니다.
+        <br>추후 지속적으로 개선하여 해상도 별로 <br>지원 가능하도록 하겠습니다.
+        <br>방문해 주셔서 감사합니다.
+      </div>
+      <button class="close">닫기</button>
+    </div>
   </div>
 </body>
 
