@@ -65,8 +65,8 @@ $(document).ready(function () {
       // 이미지 애니메이션(선 실행)
       $(".img-effect-wrap").animate({ "width": "100%" }, 800, "easeInCubic", function () {
         // 텍스트 애니메이션(후 실행)
-        $(".sub-title").animate({ "left": 642, "opacity": 1 }, 1000, "easeOutCubic");
-        $(".text-box").animate({ "left": 0, "opacity": 1 }, 1000, "easeOutCubic");
+        $(".sub-title").animate({ "left": 0, "opacity": 1 }, 1000, "easeOutCubic");
+        $(".text-box").delay(200).animate({ "left": 0, "opacity": 1 }, 1000, "easeOutCubic");
       });
     }
 

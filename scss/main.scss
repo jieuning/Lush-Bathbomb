@@ -11,7 +11,7 @@ html {
   height: 100%;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #050505;
+  background-color: #0e0e0e;
   cursor: default;
 }
 
@@ -56,21 +56,22 @@ section {
       object-fit: cover;
     }
 
-    // 텍스트 블렌드
+    // 메인 블렌드 텍스트
     .main-title {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: #050505;
+      background: #0e0e0e;
       mix-blend-mode: darken; // 배경과 텍스트 블렌드
       text-transform: uppercase;
       color: #fff;
       text-align: center;
       line-height: 100vh;
       font-size: 22vw;
-      font-weight: 900;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
       letter-spacing: -0.06em;
       overflow: hidden;
       z-index: 99;
@@ -80,7 +81,6 @@ section {
       opacity: 1;
     }
 
-    // bathbomb텍스트
     .title2 {
       opacity: 0;
       mix-blend-mode: screen;
@@ -147,8 +147,9 @@ section {
     // 텍스트 로우 정렬
     .title-box {
       font-size: 86px;
-      font-weight: 900;
+      font-weight: 800;
       display: inline-block; //로우로 정렬
+      font-family: 'Open Sans', sans-serif;
 
       // 채워진 애니메이션 텍스트
       .intro-title {
@@ -158,11 +159,10 @@ section {
 
       // 아웃라인 애니메이션 텍스트
       .intro-title2 {
-        color: #050505;
+        color: #0e0e0e;
         float: left;
         margin-left: 30px;
-        // 아웃라인 생성
-        text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff;
+        text-shadow: -1px 0px #fff, 0px 1px #fff, 1px 0px #fff, 0px -1px #fff; // 아웃라인 생성
       }
     }
 
@@ -205,47 +205,49 @@ section {
         }
       }
 
-      // 왼쪽 이미지와 겹쳐진 타이틀
-      .sub-title {
-        position: absolute;
-        top: 182px;
-        left: 930px;
-        font-size: 92px;
-        text-transform: uppercase;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        opacity: 0.1;
-      }
-
       .right-area {
         position: absolute;
-        top: 364px;
+        top: 134px;
         left: 896px;
         width: 876px;
+
+        // 왼쪽 이미지와 겹쳐진 타이틀
+        .sub-title {
+          position: relative;
+          left: 50px;
+          font-size: 92px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: -0.04em;
+          opacity: 0.1;
+          font-family: 'Open Sans', sans-serif;
+          margin-bottom: 80px;
+        }
 
         // 인트로 소개글
         .text-box {
           position: relative;
+          left: 50px;
           letter-spacing: -0.02em;
           word-break: keep-all;
           text-align: right;
           float: left;
           font-weight: 400;
           font-family: 'Noto Sans KR', sans-serif;
-          line-height: 1.6;
+          line-height: 1.8;
           text-align: left;
           opacity: 0.1;
-          left: 50px;
+          margin-bottom: 230px;
 
           .sub-title2 {
             padding-bottom: 30px;
             white-space: nowrap;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
           }
 
           .sub {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 300;
             width: 543px;
           }
@@ -253,9 +255,8 @@ section {
 
         // 중간 겹쳐진 이미지
         .intro-img-wrap {
-          position: absolute;
-          top: 450px;
-          width: 438px;
+          position: relative;
+          width: 100%;
           height: 248px;
 
           // 이미지 스케일시 크기 고정
@@ -287,29 +288,29 @@ section {
               opacity: 1;
               transform: scale(1);
             }
-          }
 
-          // 이미지 스케일시 크기 고정
-          .img-box3 {
-            position: absolute;
-            bottom: 0;
-            left: 408px;
-            width: 438px;
-            height: 138px;
-            overflow: hidden;
-
-            .intro-img3 {
+            // 이미지 스케일시 크기 고정
+            .img-box3 {
+              position: absolute;
+              bottom: 0;
+              left: 408px;
               width: 438px;
-              object-fit: contain;
-              transform: scale(1.2);
-              opacity: 0.2;
-              -webkit-transition: all 1s ease-in-out;
-              transition: all 1s ease-in-out;
-            }
+              height: 138px;
+              overflow: hidden;
 
-            .intro-img3.active {
-              transform: scale(1);
-              opacity: 1;
+              .intro-img3 {
+                width: 438px;
+                object-fit: contain;
+                transform: scale(1.2);
+                opacity: 0.2;
+                -webkit-transition: all 1s ease-in-out;
+                transition: all 1s ease-in-out;
+              }
+
+              .intro-img3.active {
+                transform: scale(1);
+                opacity: 1;
+              }
             }
           }
         }
@@ -371,7 +372,7 @@ section {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: #050505;
+    background: #0e0e0e;
     -webkit-transition: all .4s ease-in;
     transition: all .4s ease-in;
 
@@ -428,15 +429,15 @@ section {
             white-space: nowrap;
             color: #fff;
             font-size: 86px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             float: left;
+            font-family: 'Open Sans', sans-serif;
           }
 
           .ingredient {
             font-size: 22px;
             color: #fff;
-            font-weight: 500;
             float: left;
             margin-top: 20px;
           }
@@ -446,7 +447,7 @@ section {
             word-break: keep-all;
             line-height: 1.5;
             color: #fff;
-            font-size: 20px;
+            font-size: 18px;
             float: left;
           }
         }
@@ -727,6 +728,8 @@ section {
   font-weight: 600;
   z-index: 50;
   display: none;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
 }
 
 #top-btn.active {

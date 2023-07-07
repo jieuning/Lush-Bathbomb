@@ -11,13 +11,13 @@ $(document).ready(function () {
 
   // 배경 색상 배열
   let colors = [
+    "#D1BDDB",
+    "#BABEE5",
     "#A2D9D9",
+    "#EBDDCD",
     "#EFE3BA",
     "#EDD1B7",
-    "#EBDDCD",
-    "#EED2C9",
-    "#D1BDDB",
-    "#BABEE5"
+    "#EED2C9"
   ]
 
   // slide의 개수
@@ -72,13 +72,13 @@ $(document).ready(function () {
         // 초기 값이 0
         if (currentIndex == 0) {
           // 인덱스가 0일때
-          $(".slide-bg").css({ "background": "#A2D9D9" });
+          $(".slide-bg").css({ "background": "#D1BDDB" });
         } else {
           $(".slide-bg").css({ "background": colors[currentIndex] });
         }
       } else {
         // 스크롤 탑 값이 #bottom-wrap 탑 값보다 작을 때 
-        $(".slide-bg").css({ "background": "#050505" });
+        $(".slide-bg").css({ "background": "#0e0e0e" });
       }
     });
   }
